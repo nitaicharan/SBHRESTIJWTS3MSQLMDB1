@@ -10,6 +10,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.MapsId;
 import javax.persistence.OneToOne;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.nelioalves.cursomc.domain.enums.EstadoPagamento;
 
 import lombok.AllArgsConstructor;
@@ -32,6 +33,7 @@ public abstract class Pagamento implements Serializable {
 
 	@OneToOne
 	@MapsId
+	@JsonBackReference
 	@JoinColumn(name="pedido_id")
 	private Pedido pedido;
 	
