@@ -10,7 +10,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
@@ -31,8 +31,8 @@ public class Categoria implements Serializable {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   public Integer id;
   public String nome;
-  
-  @JsonBackReference
+
+  @JsonIgnore
   @ManyToMany(mappedBy = "categorias")
   private List<Produto> produtos = new ArrayList<>();
 }
