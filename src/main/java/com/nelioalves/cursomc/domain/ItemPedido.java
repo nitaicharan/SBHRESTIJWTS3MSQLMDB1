@@ -18,6 +18,7 @@ import lombok.Setter;
 public class ItemPedido implements Serializable {
 	private static final long serialVersionUID = 1L;
 
+	@EmbeddedId
 	private ItemPedidoPK id = new ItemPedidoPK();
 
 	private Double desconto;
